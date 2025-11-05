@@ -1,0 +1,46 @@
+Antes de recibir los componentes físicos, cada grupo deberá responder esta guía y realizar una simulación funcional del circuito propuesto.
+
+El objetivo de la guía es asegurarse de que comprendan el principio de funcionamiento, las conexiones y la lógica de programación de los elementos que van a utilizar.
+
+Las respuestas deben ser claras, completas y referidas al componente elegido.
+Cada grupo deberá crear en el repositorio del proyecto una carpeta llamada “Guía de Comprensión”, donde se deberán subir un archivo respondiendo la Guía por cada componente utilizado.
+El nombre de cada archivo debe seguir el formato: Nombre del proyecto - Apellido1 - Apellido2 - Nombre del componente.
+Por ejemplo: EstaciónMeteorológica - Iglesias - Mischener - SensorDeTemperatura.
+La entrega es obligatoria: sin la presentación de esta guía completa y la simulación correspondiente, no se entregarán los componentes físicos para el armado del proyecto.
+
+
+Guía de Preguntas
+Nombre del componente: Piezo
+
+¿Qué tipo de dispositivo es (sensor o actuador)? Explicá brevemente su función principal.
+Es un actuador. Convierte la energía eléctrica en sonido. Se usa para emitir tonos o alarmas.
+¿Qué tipo de señal utiliza para comunicarse con Arduino?
+Usa una señal digital pero con Tone() cambia el sonido
+¿Cuál es el rango de valores que puede entregar o recibir el componente?
+high o low
+¿Qué pines de conexión tiene el componente? Ennumerar y describir su función.
+el + va a el gnd mientras que el - va a el pin 
+¿Qué pin o pines de Arduino utilizan para conectarlo? ¿Por qué elegiste esos pines?
+Se puede conectar a cualquier pin digital
+Dibujá y explicá brevemente el esquema de conexión del componente con Arduino (incluyendo resistencias si son necesarias).
+ se conecta el - a el pin que le provee energía mientras que el + va a el gnd.
+
+¿Cuál es el principio de funcionamiento del componente?
+Si el zumbador es activo, no necesita resistencia; si es pasivo, puede agregarse una resistencia de 100 amperes para limitar la corriente.
+¿Utiliza alguna librería particular para programarlo?
+ Se controla con las funciones básicas tone(), noTone() y delay().
+¿Cómo se interpreta el dato de entrada o salida del componente en el programa?
+El dato de salida es la frecuencia del sonido (en Hertz).
+¿Qué limitaciones o precauciones eléctricas hay que tener en cuenta?
+
+No dejarlo encendido por tiempos muy largos a alta frecuencia, y que hay que fijarse que este bien conectados el -  y el +
+¿Cómo verificarías que el componente funciona correctamente antes de incorporarlo al proyecto final?
+Probar un código simple en Tinkercad , que anden bien las conecciones y que los cables esten bien puestos
+Simular en Tinkercad e incluir el link de la simulación. 
+link
+En caso de aplicar, ¿qué valor o lectura esperás obtener en la simulación si el componente funciona correctamente?
+que el Piezo vibre 
+¿Cómo podría fallar el componente o cómo detectarías un mal funcionamiento en el código o en el circuito?
+Si no suena es  revisar si está bien conectado a GND y al pin correcto.
+Si suena muy bajo es verificar si es un piezo pasivo y falta la función tone().
+Si el Arduino no responde es revisar posibles cortocircuitos.

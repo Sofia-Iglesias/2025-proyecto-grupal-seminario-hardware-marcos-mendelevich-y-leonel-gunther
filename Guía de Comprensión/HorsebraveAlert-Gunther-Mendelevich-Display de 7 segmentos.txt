@@ -1,0 +1,56 @@
+Antes de recibir los componentes físicos, cada grupo deberá responder esta guía y realizar una simulación funcional del circuito propuesto.
+
+El objetivo de la guía es asegurarse de que comprendan el principio de funcionamiento, las conexiones y la lógica de programación de los elementos que van a utilizar.
+
+Las respuestas deben ser claras, completas y referidas al componente elegido.
+Cada grupo deberá crear en el repositorio del proyecto una carpeta llamada “Guía de Comprensión”, donde se deberán subir un archivo respondiendo la Guía por cada componente utilizado.
+El nombre de cada archivo debe seguir el formato: Nombre del proyecto - Apellido1 - Apellido2 - Nombre del componente.
+Por ejemplo: EstaciónMeteorológica - Iglesias - Mischener - SensorDeTemperatura.
+La entrega es obligatoria: sin la presentación de esta guía completa y la simulación correspondiente, no se entregarán los componentes físicos para el armado del proyecto.
+
+
+Guía de Preguntas
+Nombre del componente: Display de 7 segmentos
+
+¿Qué tipo de dispositivo es (sensor o actuador)? Explicá brevemente su función principal.
+Una pantalla de 7 segmentos es un actuador, ya que transforma una señal eléctrica en luz. Su función principal es mostrar números del 0 al 9
+¿Qué tipo de señal utiliza para comunicarse con Arduino?
+Señal Analogica 
+¿Cuál es el rango de valores que puede entregar o recibir el componente?
+Arduino envía datos digitales al HT16K33 por el bus I²C (valores entre 0 y 255, o bytes).
+El HT16K33 no devuelve valores analógicos, solo puede recibir comandos (por ejemplo, encender segmentos o configurar brillo).
+Los valores que se manejan son entre 0–255.
+¿Qué pines de conexión tiene el componente? Ennumerar y describir su función.
+VDD ; Alimentación
+GND ; Tierra.
+SCL ; Línea de reloj del bus I²C(A5), sincroniza la comunicación con el microcontrolador.
+SDA ; Línea de datos del bus I²C,(A4) transmite la información.
+ROW0–ROW7 ; Líneas de control para filas o dígitos del display (multiplexado).
+COL0–COL15 ;Líneas de control para columnas o segmentos de los LEDs.
+pero se conecta el gnd, vdd el SCL a A5 y SDA a A4
+¿Qué pin o pines de Arduino utilizan para conectarlo? ¿Por qué elegiste esos pines?
+El HT16K33 trabaja con I²C, y el Arduino tiene esos pines dedicados a ese protocolo. por eso el SCL va a A5 ya que obtiene la señal de reloj I²C.y el SDA va a A4 encargado de recibir los datos del arduino
+Dibujá y explicá brevemente el esquema de conexión del componente con Arduino (incluyendo resistencias si son necesarias).
+
+¿Cuál es el principio de funcionamiento del componente?
+El Arduino envía datos digitales al HT16K33 por el bus I²C usando los pines SDA y SCL. El chip interpreta esos datos y enciende los segmentos del display de 7 segmentos, regulando la intensidad  dando la impresión de que todos los dígitos están encendidos al mismo tiempo.
+El HT16K33 recibe comandos del microcontrolador, controla automáticamente el encendido de los LEDs y regula su brillo.
+¿Utiliza alguna librería particular para programarlo?
+si, el Adafruit_GFX.h y el Adafruit_LEDBackpack.h ára que se vea en el display de thinkerkad
+¿Cómo se interpreta el dato de entrada o salida del componente en el programa?
+El Arduino envía datos al HT16K33 usando la librería Wire.h
+matrix.writeDigitNum
+  matrix.writeDisplay();
+y  matrix.begin(0x70); la dirección de bus I2C 
+
+¿Qué limitaciones o precauciones eléctricas hay que tener en cuenta?
+que el actuador esté bien conectado y que no se ponga una resistencia inecesaria
+¿Cómo verificarías que el componente funciona correctamente antes de incorporarlo al proyecto final?
+si en thinkerkad no funcione o mirar bien los cables si estan bien conectados a el arduino
+Simular en Tinkercad e incluir el link de la simulación. 
+link
+En caso de aplicar, ¿qué valor o lectura esperás obtener en la simulación si el componente funciona correctamente?
+la hora actual 
+¿Cómo podría fallar el componente o cómo detectarías un mal funcionamiento en el código o en el circuito?
+si no pone el tiempo en el display, se distorsionan los numeros o no es el tiempo actual 
+
