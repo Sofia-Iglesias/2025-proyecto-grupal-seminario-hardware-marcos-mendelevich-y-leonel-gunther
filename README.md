@@ -40,5 +40,5 @@
 <ul>
   <li><a href="https://www.tinkercad.com/things/frnGWkxJQcx-swanky-jaagub-krunk/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard&sharecode=kAiU43-fOzQ41tfspELSzA8MIS-wjwqXOssfpmt3IqI">Tinkercad</a></li>
   <li><a href="https://docs.google.com/document/d/1fLdIZMk85vQJYRQsOIa12EvWvOmzXCYjCKtbWN-fQL0/edit?usp=sharing">Documento</a></li>
-  <li><a href="https://github.com/Sofia-Iglesias/2025-proyecto-grupal-seminario-hardware-marcos-mendelevich-y-leonel-gunther/blob/main/Bitacora.md<">Bitacora</a></li>
+  <li><a href="Bitacora.md">Bitacora</a></li>
 </ul>
