@@ -1,0 +1,46 @@
+Antes de recibir los componentes físicos, cada grupo deberá responder esta guía y realizar una simulación funcional del circuito propuesto.
+
+El objetivo de la guía es asegurarse de que comprendan el principio de funcionamiento, las conexiones y la lógica de programación de los elementos que van a utilizar.
+
+Las respuestas deben ser claras, completas y referidas al componente elegido.
+Cada grupo deberá crear en el repositorio del proyecto una carpeta llamada “Guía de Comprensión”, donde se deberán subir un archivo respondiendo la Guía por cada componente utilizado.
+El nombre de cada archivo debe seguir el formato: Nombre del proyecto - Apellido1 - Apellido2 - Nombre del componente.
+Por ejemplo: EstaciónMeteorológica - Iglesias - Mischener - SensorDeTemperatura.
+La entrega es obligatoria: sin la presentación de esta guía completa y la simulación correspondiente, no se entregarán los componentes físicos para el armado del proyecto.
+
+
+Guía de Preguntas
+Nombre del componente: motor cc
+
+¿Qué tipo de dispositivo es (sensor o actuador)? Explicá brevemente su función principal.
+Un actuador que mueve un eje.
+¿Qué tipo de señal utiliza para comunicarse con Arduino?
+Usa una señal digital
+¿Cuál es el rango de valores que puede entregar o recibir el componente?
+Recibe valores PWM de 0 a 255
+¿Qué pines de conexión tiene el componente? Ennumerar y describir su función.
+ pin analogico para la terminal 1 haciendo que se mueva dependiendo de la señal y 
+¿Qué pin o pines de Arduino utilizan para conectarlo? ¿Por qué elegiste esos pines?
+generalmente el pin 9 y el gnd
+Dibujá y explicá brevemente el esquema de conexión del componente con Arduino (incluyendo resistencias si son necesarias).
+ el cable de la terminal 2 se conecta a el de la señal analogica mientras que el de la primera va a el gnd.
+
+¿Cuál es el principio de funcionamiento del componente?
+mediante la señal analogica le pones que tann rápido quieres que gire el motor
+¿Utiliza alguna librería particular para programarlo?
+no
+
+¿Cómo se interpreta el dato de entrada o salida del componente en el programa?
+a partir del voltaje, mueve el eje el motor
+
+¿Qué limitaciones o precauciones eléctricas hay que tener en cuenta?
+que este bien conectado además si anda el 
+
+¿Cómo verificarías que el componente funciona correctamente antes de incorporarlo al proyecto final?
+que los cables estén bien conectados y que el tinkercad funcione adecuadamente
+Simular en Tinkercad e incluir el link de la simulación. 
+link
+En caso de aplicar, ¿qué valor o lectura esperás obtener en la simulación si el componente funciona correctamente?
+Si el motor gira de la dirección correcta , si es negativo va a inversa, si es positivo, va de manera de que sea el movimiento  positivo
+¿Cómo podría fallar el componente o cómo detectarías un mal funcionamiento en el código o en el circuito?
+si los cables están conectados correctamente, es decir si la terminal 1 va a el gnd yn el positivo al pin analogico  si no el motor va en reversa.

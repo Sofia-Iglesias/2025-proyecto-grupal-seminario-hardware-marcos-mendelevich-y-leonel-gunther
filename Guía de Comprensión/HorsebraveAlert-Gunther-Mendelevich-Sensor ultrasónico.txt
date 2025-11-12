@@ -1,0 +1,72 @@
+
+# TP - Guía de Comprensión de Componentes - Proyecto Seminario
+
+Antes de recibir los componentes físicos, cada grupo deberá responder esta guía y realizar una simulación funcional del circuito propuesto.
+
+El objetivo de la guía es asegurarse de que comprendan el principio de funcionamiento, las conexiones y la lógica de programación de los elementos que van a utilizar.
+
+- Las respuestas deben ser **claras, completas y referidas al componente elegido.**
+- Cada grupo deberá crear en el repositorio del proyecto una carpeta llamada **“Guía de Comprensión”**, donde se deberán subir un archivo respondiendo la Guía por cada componente utilizado.
+
+
+- El nombre de cada archivo debe seguir el formato: _Nombre del proyecto - Apellido1 - Apellido2 - Nombre del componente._
+  - Por ejemplo: _EstaciónMeteorológica - Iglesias - Mischener - SensorDeTemperatura._
+- **La entrega es obligatoria:** sin la presentación de esta guía completa y la simulación correspondiente, no se entregarán los componentes físicos para el armado del proyecto.
+
+ Guía de Preguntas
+Nombre del componente: sensor ultrasónico
+
+1. ¿Qué tipo de dispositivo es (sensor o actuador)? Explica brevemente su función principal.
+Es un sensor que sensa las distancias entre un objeto y el sensor al tiran ondas de alta frecuencia, le pegan a el objeto y vuelve , desde ahí lo detecta y calcula la distancia
+2. ¿Qué tipo de señal utiliza para comunicarse con Arduino?
+Señal de disparo (Trigger):
+El Arduino envía una señal digital de salida
+Señal de eco (Echo):
+Luego, el sensor envía una señal digital de entrada al Arduino desde el pin Echo. Esa señal permanece en estado alto durante el tiempo que tarda el sonido en ir y volver. El Arduino mide ese tiempo y con eso calcula la distancia.
+Además de tener un pin digital y uno de gnd
+3. ¿Cuál es el rango de valores que puede entregar o recibir el componente?
+Distancia mínima: = 2 cm
+Distancia máxima: = 4 metros
+Precisión: = 3 mm
+ tiene tanto high o low
+4. ¿Qué pines de conexión tiene el componente? Ennumerar y describir su función.
+El pin VCC es de alimentación y se conecta al pin.
+El pin Trig es un pin digital de salida desde el Arduino, y se conecta a un pin digital de salida, este pin envía el pulso que activa la medición.
+El pin Echo es un pin digital de entrada hacia el Arduino, y se conecta a un pin digital de entrada este recibe el pulso reflejado que permite calcular la distancia.
+Por último, el pin GND es tierra.
+5. ¿Qué pin o pines de Arduino utilizan para conectarlo? ¿Por qué elegiste esos pines?
+los pines Trig y Echo generalmente se ponen en pin 8 y 7.
+6. Dibujá y explicá brevemente el esquema de conexión del componente con Arduino (incluyendo resistencias si son necesarias).
+
+
+Se conecta el eco en el 7 y el trig en el 8 mientras que el vcc va a la fuente de enegrgía y el gnd va a él ground
+
+7. ¿Cuál es el principio de funcionamiento del componente?
+uno de los sensores (trig) manda ondas hasta que reboten con el objeto y vuelvan a el eco para que los datos bayan a el arduino y calcula con eso la distancia
+8. ¿Utiliza alguna librería particular para programarlo?
+no
+9. ¿Cómo se interpreta el dato de entrada o salida del componente en el programa?
+digitalWrite(trigPin, HIGH);
+delayMicroseconds(10);
+digitalWrite(trigPin, LOW);
+duracion = pulseIn(echoPin, HIGH);
+distancia = (duracion * 0.034) / 2;
+Fórmula de distancia=Distancia=22000×0.034%2​=34 cm
+10. ¿Qué limitaciones o precauciones eléctricas hay que tener en cuenta?
+Tensión de alimentación: El sensor funciona con 5V DC. No conectarlo a más de 5V ni directamente a 3.3V, porque puede dañarse.
+
+
+Corriente: Consume poca corriente (≈15 mA), pero si se conectan varios sensores al mismo pin 5V del Arduino, conviene usar una fuente externa para evitar sobrecarga.
+Señales digitales: El pin Echo envía un pulso de 5V. Si se usa un microcontrolador que funcione a 3.3V, hay que usar un divisor de voltaje para proteger la entrada.
+Conexión de VCC y GND: Es fundamental conectar correctamente VCC a 5V y GND a tierra, invertirlos puede dañar el sensor.
+Evitar cortocircuitos: Los cables de Trig y Echo no deben tocar VCC o GND mientras el circuito esté energizado, para evitar lecturas incorrectas o daños.
+Rango de medición: El sensor mide entre 2 cm y 4 m, y objetos muy reflectantes o absorbentes pueden generar errores, aunque esto es más físico que eléctrico.
+11. ¿Cómo verificarías que el componente funciona correctamente antes de incorporarlo al proyecto final?
+Viendo la foto y mirando los diferentes pines, no es tan complicado
+12. Simular en Tinkercad e incluir el link de la simulación.
+https://www.tinkercad.com/things/7b1sT9Ya7ND-funky-wolt
+13. En caso de aplicar, ¿qué valor o lectura esperás obtener en la simulación si el componente funciona correctamente?
+si este es menor que seis o siete, que los motores de las ruedas sigan o que giren dependiendo si la mano está cerca
+14. ¿Cómo podría fallar el componente o cómo detectarías un mal funcionamiento en el código o en el circuito?
+Si el cable esta mal puesto o si en tinkercad no funciona
+
